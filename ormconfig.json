@@ -1,7 +1,0 @@
-{
-    "type": "mongodb",
-    "host": "localhost",
-    "database": "dbcovid",
-    "port": "27017",
-    "entities": ["./src/models/*.ts"]
-}
