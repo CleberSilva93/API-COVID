@@ -1,3 +1,12 @@
-import { createConnection } from "typeorm";
+const mongoose = require("mongoose");
 
-createConnection();
+mongoose.connect(
+    process.env.MONGODB,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    },
+    () => {
+        console.log("Connected Database");
+    }
+);

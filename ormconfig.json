@@ -3,10 +3,5 @@
     "host": "localhost",
     "database": "dbcovid",
     "port": "27017",
-    "entities": ["./src/models/*.ts"],
-
-    "migrations": ["./src/database/migrations/*.ts"],
-    "cli": {
-        "migrationsDir": "./src/database/migrations"
-    }
+    "entities": ["./src/models/*.ts"]
 }

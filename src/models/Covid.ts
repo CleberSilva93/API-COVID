@@ -1,34 +1,23 @@
-// import { uuid } from "uuidv4";
-import { Column, Entity, ObjectIdColumn, ObjectID } from "typeorm";
-
-// @PrimaryGeneratedColumn("uuid")
-// id: string;
-
-@Entity("dbcovid")
-class Covid {
-    @ObjectIdColumn()
-    public id: ObjectID;
-
-    @Column()
-    obitos: string;
-
-    @Column()
-    positivados: string;
-
-    @Column()
-    tratamento: string;
-
-    @Column()
-    suspeitos: string;
-
-    @Column()
-    recuperados: string;
-
-    @Column()
-    descartados: string;
-
-    @Column("timestamp")
+import mongoose from "mongoose";
+export interface ICovid extends mongoose.Document {
+    obitos: String;
+    positivados: String;
+    tratamento: String;
+    suspeitos: String;
+    recuperados: String;
+    descartados: String;
     date: Date;
 }
 
+export const CovidSchema = new mongoose.Schema({
+    obitos: { type: String },
+    positivados: { type: String },
+    tratamento: { type: String },
+    suspeitos: { type: String },
+    recuperados: { type: String },
+    descartados: { type: String },
+    date: { type: Date },
+});
+
+const Covid = mongoose.model<ICovid>("Covid", CovidSchema);
 export default Covid;

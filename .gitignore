@@ -1,2 +1,4 @@
 node_modules
-
+ignorados
+ormconfig.json
+tsconfig.json
