@@ -32,11 +32,6 @@ class Scrapping {
         if (fonte == "PortalPiracicaba") {
             const body = $("body").find("div[id='imagenet-conteudo'] > p");
 
-            // return body.each(async (idx, el) => {
-            //     let data = $(el).text().toLowerCase();
-            //     if (data.indexOf("casos confirmados") != -1) {
-            //         data = data.substring(data.indexOf("2021"), data.length);
-            //         let dados = data.split("\n");
             let oldStatus = await Covid.findOne({}).sort({
                 field: "asc",
                 date: -1,

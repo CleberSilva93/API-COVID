@@ -4,19 +4,7 @@ export default class etherealEmailLog {
     public execute = async () => {
         console.log("Credentials obtainer, sending message...");
 
-        // let transporter = nodemailer.createTransport({
-        //     // service: process.env.EMAIL_SERVICE,
-        //     host: process.env.EMAIL_HOST,
-        //     ignoreTLS: false,
-        //     secure: false,
-        //     port: 587,
-        //     auth: {
-        //         user: process.env.EMAIL_AUTH_USER,
-        //         pass: process.env.EMAIL_AUTH_PASS,
-        //     },
-        // });
         let transporter = nodemailer.createTransport({
-            // service: process.env.EMAIL_SERVICE,
             host: "smtpout.secureserver.net",
             ignoreTLS: false,
             secure: true,
@@ -28,7 +16,6 @@ export default class etherealEmailLog {
         });
 
         const mailList = [
-            "mcorreadesign@gmail.com",
             `${process.env.EMAIL_SEND}`,
         ];
 
