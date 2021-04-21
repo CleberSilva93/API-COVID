@@ -2,3 +2,5 @@ node_modules
 ignorados
 ormconfig.json
 tsconfig.json
+.env
+dist

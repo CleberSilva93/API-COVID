@@ -6,6 +6,12 @@ export interface ICovid extends mongoose.Document {
     suspeitos: String;
     recuperados: String;
     descartados: String;
+    newsObitos: String;
+    newsPositivados: String;
+    newsTratamento: String;
+    newsSuspeitos: String;
+    newsRecuperados: String;
+    newsDescartados: String;
     date: Date;
 }
 
@@ -16,6 +22,12 @@ export const CovidSchema = new mongoose.Schema({
     suspeitos: { type: String },
     recuperados: { type: String },
     descartados: { type: String },
+    newObitos: { type: String },
+    newPositivados: { type: String },
+    newTratamento: { type: String },
+    newSuspeitos: { type: String },
+    newRecuperados: { type: String },
+    newDescartados: { type: String },
     date: { type: Date },
 });
 

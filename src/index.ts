@@ -1,16 +1,18 @@
 import "dotenv/config";
-import Scrapping from "./service/scrapping";
 import "./database";
 import cron from "node-cron";
 import express from "express";
 import Covid from "./models/Covid";
+import cors from "cors";
+import { StartScrapping } from "./service/startScrapping";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/dados", async (req, res) => {
     try {
-        let retorno = await Covid.findOne({}).sort({ field: "asc", _id: -1 });
+        const retorno = await Covid.findOne({}).sort({ field: "asc", date: -1 });
         return res.status(200).json(retorno);
     } catch (error) {
         console.log(error.message);
@@ -18,21 +20,12 @@ app.get("/dados", async (req, res) => {
     }
 });
 
-async function main(cond: Boolean) {
-    try {
-        const scrapping = new Scrapping();
-        console.log("Está funcionando");
-        if (process.env.URL) await scrapping.execute(process.env.URL, cond);
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 cron.schedule(
-    "30 * * * * *",
+    "00 00 14 * * *",
     async () => {
-        console.log("Atualização");
-        await main(true);
+        console.log("Update");
+        await StartScrapping(false);
     },
     {
         scheduled: true,
@@ -40,6 +33,6 @@ cron.schedule(
     }
 );
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 4545, () => {
     console.log("Online");
 });
