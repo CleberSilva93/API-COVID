@@ -22,7 +22,7 @@ app.get("/dados", async (req, res) => {
 
 
 cron.schedule(
-    "00 00 14 * * *",
+    "00 30 18 * * *",
     async () => {
         console.log("Update");
         await StartScrapping(false);

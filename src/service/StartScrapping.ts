@@ -9,7 +9,7 @@ const EtherealEmailLog = new etherealEmailLog();
 export async function StartScrapping(cond: Boolean) {
     try {
         let date = new Date();
-        let day = 20;
+        let day = date.getDate();
         let month = date.getMonth() + 1;
         let year = date.getFullYear();
         let url = process.env.URL_PORTAL || "";
