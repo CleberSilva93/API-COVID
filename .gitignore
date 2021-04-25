@@ -4,3 +4,5 @@ ormconfig.json
 tsconfig.json
 .env
 dist
+*.lock
+*.log

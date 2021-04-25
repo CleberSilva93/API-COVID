@@ -38,7 +38,6 @@ export async function StartScrapping(cond: Boolean) {
         if (process.env.URL_PORTAL)
             await scrapping.execute(
                 `http://www.piracicaba.sp.gov.br/${link}`,
-                cond,
                 "PortalPiracicaba",
                 new Date(year, month - 1, day, 19)
             );
