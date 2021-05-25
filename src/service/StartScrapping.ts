@@ -20,6 +20,7 @@ export async function StartScrapping(cond: Boolean) {
         const body = $("body").find("ul[id='imagenet-editais'] > li");
 
         let link;
+
         body.each(async (idx, el) => {
             let a = $(el).find("a");
             let dados = $(a).attr("href");

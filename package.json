@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "build": "tsc --build",
-        "dev": "ts-node-dev --inspect --ignore-watch node_modules src/index.ts",
+        "dev": "ts-node-dev --inspect --ignore-watch node_modules server.ts",
         "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
         "prod": "node dist/index.js"
     },
