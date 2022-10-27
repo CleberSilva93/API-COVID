@@ -1,4 +1,4 @@
-# Websrapping Facebook TypeScript
+# Webscrapping Facebook TypeScript
 
 ## Bibliotecas
 
